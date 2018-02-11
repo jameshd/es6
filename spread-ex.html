@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Spreads</title>
+	<style>
+		body {
+			background-color:#ffc600;
+			font-size: 50px;
+			font-family: sans-serif;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			color: white;
+			text-shadow: 3px 3px 0 rgba(0,0,0,0.2);
+			min-height: 100vh;
+
+		}
+
+		h2 span{
+			display: inline-block;
+			transition: transform 0.2s;
+		}	
+
+		h2 span:hover {
+			transform: translateY(-20px) rotate(10deg) scale(2);
+
+		}
+	</style>
+</head>
+<body>
+	<h2>SPREADS</h2>
+
+	<script>
+		const el = document.querySelector('h2');
+		const spans = [...el.textContent];
+		const letters = spans.map(letter => `<span>${letter}</span>`);
+
+		el.innerHTML = letters.join('');
+	</script>
+</body>
+</html>

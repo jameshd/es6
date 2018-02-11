@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Tagged Template String</title>
+</head>
+<body>
+	<div class="bio"></div>
+	<script>
+		const dict = { 
+			HTML : 'Hyper Text Markup Language',
+			CSS: 'Cascading Stylesheets',
+			JS: 'Javascript'
+		};
+
+		function renderAbbrs(strings, ...values) {
+			const abbreviated = values.map(value => {
+				if (dict[value]) {
+					return `<abbr title="${dict[value]}">${value}</abbr>`;
+				}
+
+				return value;
+			});
+
+			return strings.reduce ((sentance, string, i) => {
+				if (abbreviated[i])
+					return `${sentance}${string}${abbreviated[i]}`;
+
+				return `${sentance}${string}`;
+			}, '');
+		}
+
+		const firstName = 'James';
+		const lastName = 'Dykes';
+		const sentance = renderAbbrs`Hello my name is ${firstName} ${lastName} and I love to code ${'HTML'}, ${'CSS'} and ${'JS'}`;
+
+		const bio = document.querySelector('.bio');
+		const p = document.createElement('p');
+		p.innerHTML = sentance; 
+		bio.appendChild(p);
+
+	</script>
+</body>
+</html>

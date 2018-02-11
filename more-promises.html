@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		Promises
+	</title>
+</head>
+<body>
+<script>
+	const posts = [
+		{ "name" : "Some Title", "author" : "James HD", id : 2},
+		{ "author" : "Martin White", "name" : "Leading SCRUM teams" , id: 1},
+		{ "name" : "A cloud by any other name", "author" : "Matt Bradburn", id: 3}
+	];
+
+	const authors = [
+		{ name: "James HD", "job": "Programmer"},
+		{ name : "Martin White", job: "Product Owner"},
+		{ name : "Matt Bradburn", job: "Architect"}
+	];
+
+	function getPostById(id) {
+		return new Promise((resolve, reject) => {
+			setTimeout(function() {
+				const post = posts.find(post => post.id === id);
+				if (post) {
+					resolve(post);
+				}
+
+				reject (Error('No post was found'));
+			}, 500);
+		});
+	}
+
+	function hydrateAuthor(post) {
+		return new Promise((resolve, reject) => {
+
+			const authorDetails = authors.find(person => person.name == post.author);
+			if (authorDetails) {
+				post.author = authorDetails;
+				resolve(post);
+			} else {
+				reject(Error('author not found!'));
+			}
+
+		});
+	}
+
+	getPostById(3)
+		.then(post => {
+			return hydrateAuthor(post);
+		})
+		.then(post => {
+			console.log(post);
+		})
+		.catch(err => console.error(err));
+</script>
+</body>
+</html>

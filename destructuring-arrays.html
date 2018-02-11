@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Destructuring arrays</title>
+</head>
+<body>
+<script>
+	const a = ['James', 'jameshd', 35, '2 kids'];
+
+	const [ name, handle, age] = a;
+
+	const csv = "12345,JHD SPecials,999";
+	const [id, product, price] = csv.split(',');
+	console.log(id, product, price);
+
+	const team =['James', 'Rachel', 'Matt', 'Theo', 'Timmy'];
+
+	// rest operator 
+	const [ captain, vice, ...kids] = team;
+
+	console.log(captain);
+	console.log(vice);
+	console.log(kids);
+</script>
+</body>
+</html>

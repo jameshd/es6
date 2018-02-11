@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Strings</title>
+</head>
+<body>
+<script>
+	const accountNumber = 'RB_123-XYZ';
+
+	console.log(accountNumber.startsWith('RB'));
+
+	console.log(accountNumber.endsWith('123', 6));
+
+	console.log('BMW '.repeat('5'));
+
+	function leftPad (string, length = 20) {
+		return `${' '.repeat(length - string.length)}${string}`;
+	}
+
+	console.log(leftPad('James'));
+	console.log(leftPad('Rachel'));
+	console.log(leftPad('Matthew'));
+	console.log(leftPad('Theo'));
+
+</script>
+</body>
+</html>

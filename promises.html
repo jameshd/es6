@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Promises</title>
+</head>
+<body>
+<script>
+	const url = 'https://gist.githubusercontent.com/planetoftheweb/f748ac9fac592d103529/raw/3764ab8fbbb374ef7213bca4261e089e67b3cbb6/data.json';
+
+	const postsPromise = fetch(url);
+	postsPromise
+		.then(data => data.json())
+		.then(data => {
+			console.log(data);
+		})
+		.catch(err => {
+			console.log(err);
+		});
+
+</script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Spreading</title>
+</head>
+<body>
+
+<script>
+	// const inventors = ['Einstein', 'Newton', 'Edison'];
+	// const newInventors = ['Musk', 'Jobs', 'Bezos'];
+
+	// inventors.push(...newInventors);
+
+	// const names = ['James', 'Dykes'];
+
+	// sayHi(...names);
+
+	// function sayHi(first, last) {
+	// 	alert(`Hello ${first} ${last}`);
+	// }
+
+
+	const runner = ['James', 12345, 6, 5, 3, 9, 7, 35];
+	const [name, id, ...runs] = runner;
+	// console.log(name, id, runs);
+
+	const keys = ['name', 'age', 'weight'];
+	const values = ['James', 29, 17];
+
+	const obj = {
+		[keys.shift()] : values.shift(),
+		[keys.shift()] : values.shift(),
+		[keys.shift()] : values.shift()
+	};
+
+	console.log(obj);
+</script>
+</body>
+</html>

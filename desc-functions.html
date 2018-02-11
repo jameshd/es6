@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Destructing Functions</title>
+</head>
+<body>
+<script>
+	
+	function calcTip ({total, tip = 0.15, tax = 0.20}) {
+		return total + (total * tip) + (total * tax);
+	}
+
+	console.log(calcTip({
+		total: 300
+	}));
+
+</script>
+</body>
+</html>

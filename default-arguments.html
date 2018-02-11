@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Default Arguments</title>
+</head>
+<body>
+	<script>
+		function calculateBill (total, tax = 0.20, tip = 0.10) {
+			return total + (total * tax) + (total * tip);
+		}
+
+		console.log(calculateBill(20, undefined, 0.40));
+	</script>
+</body>
+</html>

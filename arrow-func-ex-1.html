@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Exercise 1</title>
+</head>
+<body>
+	<ul>
+		<li date-time="9:10">Flexbox Video</li>
+		<li date-time="3:20">Flexbox Video</li>
+		<li date-time="3:15">Redux Video</li>
+		<li date-time="3:15">React Video</li>
+		<li date-time="3:15">Flexbox Video</li>
+		<li date-time="3:15">React Native Video</li>
+		<li date-time="6:26">Flexbox Video</li>
+		<li date-time="3:15">CSS Video</li>
+		<li date-time="3:15">ES6 Video</li>
+		<li date-time="3:15">ES2016 Video</li>
+		<li date-time="3:00">Flexbox Video</li>
+		<li date-time="3:15">Grunt Video</li>
+		<li date-time="3:15">Webpack Video</li>
+		<li date-time="3:15">AWS Video</li>
+		<li date-time="10:15">Flexbox Video</li>
+	</ul>
+
+	<script>
+		const listItems = Array.from(document.querySelectorAll('li[date-time]'));
+		// console.log(listItems);
+
+		const flexBoxVideosTimes = listItems
+			.filter(item => item.innerText.includes('Flexbox'))
+			.map(item => item.getAttribute('date-time'))
+			.map(time => {
+				[mins, seconds] = time.split(':', 2).map(part => parseInt(part));
+				return (mins * 60) + seconds;
+			})
+			.reduce((totalTime, currentValue) => totalTime + currentValue, 0);
+
+			console.log(flexBoxVideosTimes);
+
+	</script>
+</body>
+</html>

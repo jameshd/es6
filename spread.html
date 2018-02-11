@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>...Spread</title>
+</head>
+<body>
+	<ul class="people">
+		<li>James</li>
+		<li>Rachel</li>
+		<li>Mum</li>
+	</ul>
+	<script>
+		
+		const featured = ['deepDish', 'Pepperoni', 'Hawaian'];
+		const speciality = ['Stuffed Crust', 'Polla', 'Rocket'];
+
+		const pizzas = [...featured, 'veg', ...speciality];
+		// console.log(pizzas);
+
+		const fridayPizzas = [...pizzas];
+
+		const deepDish  = {
+			name : 'Deep Dish',
+			size: 'medium',
+			indgrediants: ['dough', 'cheese', 'tomatoe', 'herbs']
+		}
+
+		const people = [...document.querySelectorAll('.people li')];
+		console.log(people);
+
+		const shoppingList = [...deepDish.indgrediants];
+	</script>
+</body>
+</html>

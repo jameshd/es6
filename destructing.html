@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Desctructing</title>
+</head>
+<body>
+<script>
+	const user = {
+		name: "James", 
+		first: "James",
+		last: "Dykes",
+		age: 35,
+		bio :{ 
+			desc: "something something something",
+			handle: "jameshd", 
+			profile : "twitter"
+		}
+	};
+
+	const { first, last } = user;
+
+	const { handle:username, profile:prof } = user.bio;
+
+	const settings = {
+		width: 300,
+	};
+
+	// const { width = 100, height = 200, fontSize = 14, color = "red"} = settings;
+
+	// console.log(`width: ${width} height: ${height} fontSize: ${fontSize} color: ${color}`);
+
+	const {w: width = 400, h:height = 900} = {w: 100};
+
+	console.log(`width ${width} height: ${height}`);
+
+</script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Arrow Functions</title>
+</head>
+<body>
+	<script>
+		{
+			const names = ['James', 'Rach', 'Matt', 'Theo'];
+
+			fullNames = names.map((name) => {
+				return `${name} HD`;
+			});
+
+			fullNames2 = names.map(name => `${name} HD`);
+
+			//console.log(fullNames2);
+		}
+
+		
+			const race = '100m Dash';
+			const winners = ['James', 'Rachel', 'Matt', 'Theo'];
+
+			const o = winners.map( (winner, i) => ({ name: winner, race, position: i}));
+			// console.table(o);
+		
+			const ages = [12, 32, 45, 66,92, 45, 33, 83];
+			const old = ages.filter( age => age > 60);
+			console.log(old);
+
+	</script>
+</body>
+</html>

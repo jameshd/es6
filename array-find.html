@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Array fin</title>
+</head>
+<body>
+	<script type="text/javascript">
+		
+		const data = [{
+        "username": "jack",
+        "first_name": "Jack",
+        "profile_picture": "http://distillery.s3.amazonaws.com/profiles/profile_66_75sq.jpg",
+        "age": "12",
+        "last_name": "Dorsey"
+    },
+    {
+        "username": "sammyjack",
+        "first_name": "Sammy",
+        "profile_picture": "http://distillery.s3.amazonaws.com/profiles/profile_29648_75sq_1294520029.jpg",
+        "age": "29",
+        "last_name": "Jack"
+    },
+    {
+        "username": "jacktiddy",
+        "first_name": "Jack",
+        "profile_picture": "http://distillery.s3.amazonaws.com/profiles/profile_13096_75sq_1286441317.jpg",
+        "age": "30",
+        "last_name": "Tiddy"
+    }];
+	
+    const user = data.find(user => user.username === 'jacktiddy');
+    console.log(user);
+
+    const userIndex = data.findIndex(user => user.username === 'sammyjack');
+    console.log(userIndex);
+
+    const oldEnough = data.some(item => item.age >= 18);
+    console.log(oldEnough);
+
+	</script>
+</body>
+</html>
